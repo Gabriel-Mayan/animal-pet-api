@@ -1,12 +1,13 @@
 const yup = require('yup');
-const { testDuplicatedUsers, testPasswords } = require('./_tests');
+const { testDuplicatedUsers, testPasswords, testUserNameEqualAdminName } = require('../../tests/_tests');
 
 const createUserSchema = yup.object().shape({
   userName: yup
     .string()
     .strict()
     .required()
-    .test('equal', 'Nome de usuario deve ser unico', async (userName) => {
+    .test('equal', 'Nome de usuario inválido, escolha outro', (userName) => testUserNameEqualAdminName(userName))
+    .test('equal', 'Nome de usuario invalido, escolha outro', async (userName) => {
       const user = await testDuplicatedUsers(userName);
       return !user;
     }),
