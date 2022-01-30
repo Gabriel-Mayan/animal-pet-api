@@ -8,9 +8,9 @@ exports.up = async function (knex) {
     table.string('phone', 20).notNullable();
     table.string('address', 255).notNullable();
     table.string('userType', 15).notNullable();
-    table.date('createdAt').notNullable();
-    table.date('updatedAt').nullable();
-    table.date('deletedAt').nullable();
+    table.timestamp('createdAt').defaultTo(knex.fn.now()).notNullable();
+    table.timestamp('updatedAt').nullable();
+    table.timestamp('deletedAt').nullable();
   });
 };
 

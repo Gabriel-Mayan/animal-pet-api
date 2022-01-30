@@ -2,7 +2,7 @@ const { encryptPassword } = require('../helpers/handlePassword');
 const { testDuplicatedUsers } = require('../../tests/index');
 
 exports.seed = async function (knex) {
-  const encryptedPassword = encryptPassword(process.env.SUPER_ADMIN_PWD);
+  const encryptedPassword = await encryptPassword(process.env.SUPER_ADMIN_PWD);
   const insertedSuperAdm = await testDuplicatedUsers(process.env.SUPER_ADMIN_USERNAME);
 
   if (!insertedSuperAdm) {

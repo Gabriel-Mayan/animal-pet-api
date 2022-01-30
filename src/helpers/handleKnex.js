@@ -1,4 +1,4 @@
-const knex = require('../../knexfile');
+const knex = require('../services/knex');
 
 const findOneBy = async (table, conditons) => {
   const info = await knex(table).where(conditons).first();
