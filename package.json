@@ -14,7 +14,7 @@
     "seed:run": "knex seed:run",
     "seed:create": "knex seed:make",
     "docker:rm": "docker rm animal-pet",
-    "docker:stop": "docker stop anima-pet",
+    "docker:stop": "docker stop animal-pet",
     "docker:run": "docker run -d -p 5436:5432 --name animal-pet -e POSTGRES_HOST_AUTH_METHOD=trust postgres:12-alpine",
     "database:create": "docker exec animal-pet psql -U postgres postgres -c \"CREATE DATABASE animalpet\""
   },
@@ -41,7 +41,7 @@
     "uuid": "^8.3.2",
     "yup": "^0.32.11"
   },
-	"devDependencies": {
+  "devDependencies": {
     "eslint": "^8.4.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
