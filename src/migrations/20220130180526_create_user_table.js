@@ -7,6 +7,7 @@ exports.up = async function (knex) {
     table.string('password', 255).notNullable();
     table.string('phone', 20).notNullable();
     table.string('address', 255).notNullable();
+    table.string('userType', 15).notNullable();
     table.date('createdAt').notNullable();
     table.date('updatedAt').nullable();
     table.date('deletedAt').nullable();
