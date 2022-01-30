@@ -18,8 +18,7 @@ async function login(request, response) {
     const token = await generateToken({ id: user.id, userName, userType: user.userType });
 
     return response.status(200).json({ user, token });
-  }
-  catch (error) {
+  } catch (error) {
     return response.status(200).json('Falha ao fazer login');
   }
 }
