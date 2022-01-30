@@ -1,13 +1,13 @@
-const knex = require('../knexfile');
+const { findOneBy } = require('../src/helpers/handleKnex');
 
 const testDuplicatedUsers = async (userName) => {
-  const usuario = await knex('users').where({ userName }).first();
+  const usuario = await findOneBy('users', { userName });
   return usuario;
 };
 
 const testDuplicatedProducts = async (productName) => {
-  const usuario = await knex('products').where({ productName }).first();
-  return usuario;
+  const produtos = await findOneBy('products', { productName });
+  return produtos;
 };
 const testPasswords = async (password) => {
   const regExTests = [/[0-9]/, /[a-z]/, /[A-Z]/, /[!|@|#|$|%|&|*|(|)|-|_|+|=|^]/];

@@ -1,7 +1,4 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
+/*
 exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex('table_name').del()
@@ -12,4 +9,5 @@ exports.seed = function (knex) {
         { id: 2, colName: 'rowValue2' },
         { id: 3, colName: 'rowValue3' },
       ]));
-};
+    };
+*/

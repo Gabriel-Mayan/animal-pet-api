@@ -7,7 +7,7 @@ const validateRequest = (params, query, body, user, req) => async (request, resp
     if (params) { await params.validate(request.params); }
     next();
   } catch (error) {
-    return response.status(500).json(error.message);
+    return response.status(400).json(error.message);
   }
 };
 

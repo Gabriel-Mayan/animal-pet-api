@@ -1,5 +1,5 @@
 const yup = require('yup');
-const { testDuplicatedProducts } = require('./_tests');
+const { testDuplicatedProducts } = require('../../tests/_tests');
 
 const createProductSchema = yup.object().shape({
   productName: yup
