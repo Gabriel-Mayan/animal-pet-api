@@ -1,4 +1,4 @@
-const validateRequest = (params, query, body, user, req) => async (request, response, next) => {
+const validateRequest = (body, params, query, user, req) => async (request, response, next) => {
   try {
     if (req) { await req.validate(request); }
     if (user) { await user.validate(request.user); }

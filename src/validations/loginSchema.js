@@ -1,7 +1,7 @@
 const yup = require('yup');
 const { testPasswords, testLogin } = require('../../tests/_tests');
 
-const createUserSchema = yup.object().shape({
+const loginSchema = yup.object().shape({
   userName: yup
     .string()
     .strict()
@@ -19,5 +19,5 @@ const createUserSchema = yup.object().shape({
 });
 
 module.exports = {
-  createUserSchema,
+  loginSchema,
 };

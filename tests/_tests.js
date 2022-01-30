@@ -9,6 +9,7 @@ const testDuplicatedProducts = async (productName) => {
   const produtos = await findOneBy('products', { productName });
   return produtos;
 };
+
 const testPasswords = async (password) => {
   const regExTests = [/[0-9]/, /[a-z]/, /[A-Z]/, /[!|@|#|$|%|&|*|(|)|-|_|+|=|^]/];
   const passwordTest = regExTests.map((validate) => validate.test(password));
