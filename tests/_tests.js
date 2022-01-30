@@ -20,6 +20,12 @@ const testUserNameEqualAdminName = async (userName) => {
   return test;
 };
 
+const testLogin = async (userName) => {
+  const usuario = await findOneBy('users', { userName });
+  const testUser = !(!usuario || usuario.deletedAt);
+  return testUser;
+};
+
 module.exports = {
- testDuplicatedUsers, testPasswords, testDuplicatedProducts, testUserNameEqualAdminName,
+ testDuplicatedUsers, testPasswords, testDuplicatedProducts, testUserNameEqualAdminName, testLogin,
 };
