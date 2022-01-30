@@ -1,12 +1,12 @@
 const knex = require('../../knexfile');
 
 const testDuplicatedUsers = async (userName) => {
-  const usuario = await knex('usuarios').where({ userName }).first();
+  const usuario = await knex('users').where({ userName }).first();
   return usuario;
 };
 
 const testDuplicatedProducts = async (productName) => {
-  const usuario = await knex('produtos').where({ productName }).first();
+  const usuario = await knex('products').where({ productName }).first();
   return usuario;
 };
 
