@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./src/app.js",
+    "migration:run": "knex migrate:latest",
+    "migration:create": "knex migrate:make",
+    "migration:revert": "knex migrate:rollback",
+    "seed:run": "knex seed:run",
+    "seed:create": "knex seed:make"
   },
   "repository": {
     "type": "git",
