@@ -5,9 +5,14 @@ const findOneBy = async (table, conditons) => {
   return info;
 };
 
+const getInfoPaginated = async (table, conditons, page, pageSize) => {
+  const info = await knex(table).where(conditons).limit(pageSize).offset((page - 1) * pageSize);
+  return info;
+};
+
 const insertInfo = async (table, values) => {
   const insertedInfo = await knex(table).insert(values).returning('*');
   return insertedInfo[0];
 };
 
-module.exports = { findOneBy, insertInfo };
+module.exports = { findOneBy, insertInfo, getInfoPaginated };
