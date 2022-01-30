@@ -15,6 +15,7 @@ exports.seed = async function (knex) {
       phone: process.env.SUPER_ADMIN_PHONE,
       address: process.env.SUPER_ADMIN_ADDRESS,
       userType: process.env.SUPER_ADMIN_USERTYPE,
+      createdAt: new Date(),
     });
   }
 };
