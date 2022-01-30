@@ -6,7 +6,7 @@ const loginSchema = yup.object().shape({
     .string()
     .strict()
     .required()
-    .test('equal', 'Usuario não encontrado', async (userName) => {
+    .test('equal', 'Login ou senha invalidos', async (userName) => {
       const test = await testLogin(userName);
       return test;
     }),
@@ -15,7 +15,7 @@ const loginSchema = yup.object().shape({
     .string()
     .strict()
     .required()
-    .test('equal', 'Senha Inválida', (pwd) => testPasswords(pwd)),
+    .test('equal', 'Login ou senha invalidos', (pwd) => testPasswords(pwd)),
 });
 
 module.exports = {
