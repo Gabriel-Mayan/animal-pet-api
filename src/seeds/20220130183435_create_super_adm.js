@@ -1,5 +1,5 @@
 const { encryptPassword } = require('../helpers/handlePassword');
-const { testDuplicatedUsers } = require('../../tests/_tests');
+const { testDuplicatedUsers } = require('../../tests/index');
 
 exports.seed = async function (knex) {
   const encryptedPassword = encryptPassword(process.env.SUPER_ADMIN_PWD);

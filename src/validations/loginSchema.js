@@ -1,5 +1,5 @@
 const yup = require('yup');
-const { testPasswords, testLogin } = require('../../tests/_tests');
+const { testPasswords, testLogin } = require('../../tests/index');
 
 const loginSchema = yup.object().shape({
   userName: yup

@@ -2,7 +2,7 @@ const yup = require('yup');
 
 const {
  testDuplicatedUsers, testPasswords, testUserNameEqualAdminName, testFullName,
-} = require('../../tests/_tests');
+} = require('../../tests/index');
 
 const createUserSchema = yup.object().shape({
   userName: yup
