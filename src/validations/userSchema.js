@@ -1,5 +1,8 @@
 const yup = require('yup');
-const { testDuplicatedUsers, testPasswords, testUserNameEqualAdminName } = require('../../tests/_tests');
+
+const {
+ testDuplicatedUsers, testPasswords, testUserNameEqualAdminName, testFullName,
+} = require('../../tests/_tests');
 
 const createUserSchema = yup.object().shape({
   userName: yup
@@ -38,7 +41,8 @@ const createUserSchema = yup.object().shape({
   fullName: yup
     .string()
     .strict()
-    .required(),
+    .required()
+    .test('equal', 'Nome deve conter apenas letras', (fullName) => testFullName(fullName)),
 
   address: yup
     .string()

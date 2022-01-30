@@ -16,9 +16,15 @@ const testPasswords = async (password) => {
   return passwordTest.every((pwd) => pwd);
 };
 
+const testFullName = async (fullName) => {
+  const regExTests = [/[0-9]/, /[!|@|#|$|%|&|*|(|)|-|_|+|=|^]/];
+  const fullNameTest = regExTests.map((validate) => validate.test(fullName));
+  return fullNameTest.every((name) => !name);
+};
+
 const testUserNameEqualAdminName = async (userName) => {
   const test = userName === process.env.SUPER_ADMIN_USERNAME;
-  return test;
+  return !test;
 };
 
 const testLogin = async (userName) => {
@@ -28,5 +34,10 @@ const testLogin = async (userName) => {
 };
 
 module.exports = {
- testDuplicatedUsers, testPasswords, testDuplicatedProducts, testUserNameEqualAdminName, testLogin,
+  testLogin,
+  testFullName,
+  testPasswords,
+  testDuplicatedUsers,
+  testDuplicatedProducts,
+  testUserNameEqualAdminName,
 };
