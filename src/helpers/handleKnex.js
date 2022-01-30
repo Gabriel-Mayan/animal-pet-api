@@ -1,7 +1,13 @@
 const knex = require('../../knexfile');
 
 const findOneBy = async (table, conditons) => {
-  await knex(table).where(conditons).first();
+  const info = await knex(table).where(conditons).first();
+  return info;
 };
 
-module.exports = { findOneBy };
+const insertInfo = async (table, values) => {
+  const insertedInfo = await knex(table).insert(values).returning('*');
+  return insertedInfo;
+};
+
+module.exports = { findOneBy, insertInfo };
