@@ -6,6 +6,9 @@ const findOneBy = async (table, conditons) => {
 };
 
 const getInfoPaginated = async (table, conditons, page, pageSize) => {
+  page = page || 1;
+  pageSize = pageSize || 12;
+
   const info = await knex(table).where(conditons).limit(pageSize).offset((page - 1) * pageSize);
   return info;
 };
